@@ -52,11 +52,31 @@
                     <tr>
                       @if($detailsLost1->state == 'A')
                         <td>{{$detailsLost1->start_time}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach($machine as $machine1)
+                          @if($machine1->id == 1)
+                            <td>{{$machine1->state}}</td>
+                          @endif
+                        @endforeach
+                        @foreach($machine as $machine1)
+                          @if($machine1->id == 2)
+                            <td>{{$machine1->state}}</td>
+                          @endif
+                        @endforeach
+                        @foreach($machine as $machine1)
+                          @if($machine1->id == 3)
+                            <td>{{$machine1->state}}</td>
+                          @endif
+                        @endforeach
+                        @foreach($machine as $machine1)
+                          @if($machine1->id == 4)
+                            <td>{{$machine1->state}}</td>
+                          @endif
+                        @endforeach
+                        @foreach($machine as $machine1)
+                          @if($machine1->id == 5)
+                            <td>{{$machine1->state}}</td>
+                          @endif
+                        @endforeach
                         <td>{{$detailsLost1->end_time}}</td>
                         @endif
                     </tr>

@@ -150,8 +150,10 @@ class Controller_Lots extends Controller
     public function show()
     {
       $detailsLost= $this->detailsLost();
+      $machine = Machine::get();
 
-      return view("process_lots",compact('detailsLost'));
+
+      return view("process_lots",compact('detailsLost','machine'));
     }
 
     /**
@@ -194,8 +196,11 @@ class Controller_Lots extends Controller
         $inputLot->save();
 
         $detailsLost= $this->detailsLost();
-        $machine = Machine::get();
-    
+        $machine= DB::table('machines')
+                            ->select('*')
+                            ->get();
+
+
         return view("process_lots",compact('detailsLost','machine'));
 
 
@@ -224,10 +229,30 @@ class Controller_Lots extends Controller
       $borer = $yieldFactor->berry_borer_percentage;
       $minutes =0;
 
+      $machine = Machine::find(1);
+      $machine->state = 'I';
+      $machine->save();
+
+      $machine = Machine::find(2);
+      $machine->state = 'I';
+      $machine->save();
+
+      $machine = Machine::find(3);
+      $machine->state = 'I';
+      $machine->save();
+
+      $machine = Machine::find(4);
+      $machine->state = 'I';
+      $machine->save();
+
+      $machine = Machine::find(5);
+      $machine->state = 'I';
+      $machine->save();
 
 
       if($pasillaPercentage>0)
       {
+
         $machine = Machine::find(1);
         $machine->state = 'A';
         $machine->save();
