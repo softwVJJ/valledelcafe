@@ -23,7 +23,7 @@ class Controller_Data extends Controller
     {
 
         // if($request->isMethod("post"))
-        // {
+        // {fgjdfg
         //   $user = $_POST['type-user'];
         //   $identification = $_POST['identification_card'];
         //   return view("registro_datos",compact('user','identification'));
