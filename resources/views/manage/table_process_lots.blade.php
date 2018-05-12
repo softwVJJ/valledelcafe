@@ -14,7 +14,7 @@
                     <table class="table table-bordered text-center">
                     <thead>
                       <tr>
-                        <th>@lang("vista.id_lot")</th>
+                        <th>@lang("vista.label_id_lot")</th>
                         <th>@lang("vista.label_details_lots")</th>
                         <th>@lang("vista.label_enter_production_lost")</th>
                       </tr>

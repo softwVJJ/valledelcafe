@@ -59,6 +59,19 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'host'   => env('DB_HOST', '127.0.0.1'),
+        //     'port'   =>   '5432',
+        //       'database' => env('DB_DATABASE', 'forge'),
+        //     'username'  => 'postgres',
+        //     'password'  => 1234,
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',

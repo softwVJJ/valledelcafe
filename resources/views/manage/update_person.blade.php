@@ -7,8 +7,7 @@
       <th>@lang("vista.last_name")</th>
       <th>@lang("vista.telephone")</th>
       <th>@lang("vista.address")</th>
-      <th>@lang("vista.email")</th>
-      <th>@lang("vista.type_user")</th>
+      <th>@lang("vista.email")</th>   
       <th>@lang("vista.edit")</th>
       <!--<th>@lang("vista.remove")</th>-->
     </tr>
@@ -21,7 +20,6 @@
           <td id="surnames{{$dataPeople->id}}">{{$dataPeople->surnames}}</td>
           <td id="phone{{$dataPeople->id}}">{{$dataPeople->phone}}</td>
           <td id="address{{$dataPeople->id}}">{{$dataPeople->address}}</td>
-          <td id="email{{$dataPeople->id}}">{{$dataPeople->email}}</td>
           <td id="email{{$dataPeople->id}}">{{$dataPeople->email}}</td>
           <td><button id="{{$dataPeople->id}}" class="btn btn-primary" onclick="editPeople(this.id)"><i class="fa fa-edit"></i></button></td>
           <!--<td><button id="{{$dataPeople->id}}" class="btn btn-danger" onclick="removePeople(this.id)"><i class="fa fa-trash"></i></button></td>-->

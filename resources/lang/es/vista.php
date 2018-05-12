@@ -94,6 +94,7 @@ return [
     'label_machine_tostion' => 'Tostión',
     'label_machine_select' => 'Selección',
     'label_hour_end' => 'Hora fin',
+    'label_id_lot' => 'Id de lote',
 
     'th-waiting_lots'      => 'Lotes en espera',
     'th-inprocess_lots'    => 'Lotes en proceso',
