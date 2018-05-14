@@ -2,7 +2,7 @@
 applications:
 - name: vdc
   memory: 128M
-  buildpack: https://github.com/cloudfoundry/php-buildpack
+  #buildpack: https://github.com/cloudfoundry/php-buildpack
   timeout: 60
   #services:
   #- MyDB
