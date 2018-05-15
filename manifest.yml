@@ -1,8 +1,9 @@
 ---
 applications:
-- name: vdc
+- name: valledelcafe1
   memory: 64M
-  buildpack: https://github.com/cloudfoundry/php-buildpack
-  env:
-    CF_STAGING_TIMEOUT: 15
-    CF_STARTUP_TIMEOUT: 15
+  random-route: true
+  #buildpack: https://github.com/cloudfoundry/php-buildpack
+  #env:
+#    CF_STAGING_TIMEOUT: 15
+#    CF_STARTUP_TIMEOUT: 15
