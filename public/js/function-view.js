@@ -218,17 +218,22 @@ $(function(){
      pasilla_percentage = 0;
      white_percentage = 0;
      fermented_percentage = 0;
+     merma = 0;
+     dxmachine = 0;
 
-     var pasilla_percentage = $('input:text[name=pasilla-percentage]').val();
-     var white_percentage = $('input:text[name=white-percentage]').val();
-     var fermented_percentage = $('input:text[name=fermented-percentage]').val();
+     var pasilla_percentage = ($('input:text[name=pasilla-percentage]').val())*100/250;
+     var white_percentage = ($('input:text[name=white-percentage]').val())*100/250;
+     var fermented_percentage = ($('input:text[name=fermented-percentage]').val())*100/250;
     //var municipalities_id = document.getElementById('municipalities_id'+id).innerHTML;
-     var borer= $('input:text[name=borer]').val();
+     var borer= ($('input:text[name=borer]').val())*100/250;
+     var merma= ($('input:text[name=merma]').val())*100/250;
+     var dxmachine= ($('input:text[name=dxmachine]').val())*100/250;
+
 
 
      var formula = 0;
-
-     var formula = 250*50/(250-(parseInt(pasilla_percentage)+parseInt(white_percentage)+parseInt(fermented_percentage)+parseInt(borer)));
+   alert(250-(pasilla_percentage+white_percentage+fermented_percentage+borer+merma+dxmachine));
+     var formula = 250*70/(250-(pasilla_percentage+white_percentage+fermented_percentage+borer+merma+dxmachine));
 
      document.getElementById('yield-factor').value=parseInt(formula);
 

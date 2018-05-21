@@ -29,6 +29,14 @@ class CreateYieldFactorsTable extends Migration
             $table->integer('white_percentage');
             $table->integer('fermented_percentage');
             $table->integer('berry_borer_percentage')->nullable();
+            $table->integer('merma')->nullable();
+            $table->integer('d_x_machine')->nullable();
+            $table->char('machine_trilla',1);
+            $table->char('machine_desimetric',1);
+            $table->char('machine_electronic',1);
+            $table->char('machine_tostion',1);
+            $table->char('machine_select',1);
+
             $table->timestamps();
         });
     }

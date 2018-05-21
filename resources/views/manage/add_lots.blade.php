@@ -11,12 +11,12 @@
                 <label for="validationCustom02">@lang("vista.label_number_kilos")</label>
                 <input type="text" onkeypress="return onlyNumberId(event)" class="form-control" id="kilos-number" name="kilos-number" placeholder="" value="" >
               </div>
-                <div class="col-md-2 mb-2">
+                <!-- <div class="col-md-2 mb-2">
                 <label for="validationCustomUsername">@lang("vista.label_kilos_avaible")</label>
                 <div class="input-group">
                 <input type="text" onkeypress="return onlyNumberId(event)" class="form-control" name="avaible-kilos" value="" id="avaible-kilos" >
                 </div>
-              </div>
+              </div> -->
             </div>
       </div>
     </div>

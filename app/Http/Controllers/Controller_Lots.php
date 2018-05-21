@@ -31,7 +31,7 @@ class Controller_Lots extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($idEstate,$inputDate,$kilosNumber,$avaibleKilos,$pasillaPercentage,$whitePercentage,
-                              $fermentedPercentage,$borer,$yieldfactor,$cupscore,$armona,$flavor,$acidity,$body,
+                              $fermentedPercentage,$borer,$merma,$dxMachine,$trillaCheck,$desimetricCheck,$electronicCheck,$tostionCheck,$selectCheck,$yieldfactor,$cupscore,$armona,$flavor,$acidity,$body,
                                   $sweetnees,$balanceValue,$balanceDescription,$btnManage)
     {
       $yieldFactor = new YieldFactor;
@@ -48,6 +48,13 @@ class Controller_Lots extends Controller
       $yieldFactor->white_percentage= $whitePercentage;
       $yieldFactor->fermented_percentage= $fermentedPercentage;
       $yieldFactor->berry_borer_percentage= $borer;
+      $yieldFactor->merma = $merma;
+      $yieldFactor->d_x_machine = $dxMachine;
+      $yieldFactor->machine_trilla= $trillaCheck;
+      $yieldFactor->machine_desimetric= $desimetricCheck;
+      $yieldFactor->machine_electronic= $electronicCheck;
+      $yieldFactor->machine_tostion= $tostionCheck;
+      $yieldFactor->machine_select= $selectCheck;
       $yieldFactor->yield_factor= $yieldfactor;
       $save1 = $yieldFactor->save();
       $cupProfilesId=$yieldFactor->id;
@@ -109,16 +116,50 @@ class Controller_Lots extends Controller
      */
     public function store(Request $request)
     {
+      $trillaCheck = 'I';
+      $desimetricCheck = 'I';
+      $electronicCheck = 'I';
+      $tostionCheck = 'I';
+      $selectCheck = 'I';
+
       if($request->isMethod("post"))
       {
         $idEstate = $request->input('id-estate');
         $inputDate = $request->input('input-date');
         $kilosNumber = $request->input('kilos-number');
-        $avaibleKilos = $request->input('avaible-kilos');
+        $avaibleKilos = 0;//$request->input('avaible-kilos');
         $pasillaPercentage = $request->input('pasilla-percentage');
         $whitePercentage = $request->input('white-percentage');
         $fermentedPercentage = $request->input('fermented-percentage');
         $borer = $request->input('borer');
+        $merma = $request->input('merma');
+        $dxMachine = $request->input('dxmachine');
+
+        if($request->input('trilla-check') != '')
+        {
+          $trillaCheck = $request->input('trilla-check');
+        }
+
+        if($request->input('desimetric-check') != '')
+        {
+          $desimetricCheck = $request->input('desimetric-check');
+        }
+
+        if($request->input('electronic-check') != '')
+        {
+          $electronicCheck = $request->input('electronic-check');
+        }
+
+        if($request->input('tostion-check') != '')
+        {
+          $tostionCheck = $request->input('tostion-check');
+        }
+
+        if($request->input('select-check') != '')
+        {
+          $selectCheck = $request->input('select-check');
+        }
+
         $yieldfactor = $request->input('yield-factor');
         $cupscore = $request->input('cup-score');
         $armona = $request->input('aroma');
@@ -130,12 +171,14 @@ class Controller_Lots extends Controller
         $balanceDescription = $request->input('balance-description');
         $btnManage = $request->input('btn-manage');
 
+
+
         if($btnManage == "add")
         {
 
           $this->create($idEstate,$inputDate,$kilosNumber,$avaibleKilos,$pasillaPercentage,$whitePercentage,
-                                    $fermentedPercentage,$borer,$yieldfactor,$cupscore,$armona,$flavor,$acidity,$body,
-                                        $sweetnees,$balanceValue,$balanceDescription,$btnManage);
+                                    $fermentedPercentage,$borer,$merma,$dxMachine,$trillaCheck,$desimetricCheck,$electronicCheck,$tostionCheck,
+                                      $selectCheck,$yieldfactor,$cupscore,$armona,$flavor,$acidity,$body,$sweetnees,$balanceValue,$balanceDescription,$btnManage);
 
         }
       }
@@ -227,6 +270,12 @@ class Controller_Lots extends Controller
       $whitePercentage = $yieldFactor->white_percentage;
       $fermentedPercentage = $yieldFactor->fermented_percentage;
       $borer = $yieldFactor->berry_borer_percentage;
+      $machineTrilla = $yieldFactor->machine_trilla;
+      $machineDesimetric = $yieldFactor->machine_desimetric;
+      $machineElectronic = $yieldFactor->machine_electronic;
+      $machineTostion = $yieldFactor->machine_tostion;
+      $machineSelect = $yieldFactor->machine_select;
+
       $minutes =0;
 
       $machine = Machine::find(1);
@@ -250,7 +299,7 @@ class Controller_Lots extends Controller
       $machine->save();
 
 
-      if($pasillaPercentage>0)
+      if($machineTrilla == 'A')
       {
 
         $machine = Machine::find(1);
@@ -259,31 +308,34 @@ class Controller_Lots extends Controller
         $minutes +=60;
 
       }
-      if($whitePercentage>0 && $fermentedPercentage>0 && $borer>0)
+      if($machineDesimetric == 'A')
       {
         $machine = Machine::find(2);
         $machine->state = 'A';
         $machine->save();
         $minutes +=60;
       }
-      if($whitePercentage>3 && $fermentedPercentage>3 && $borer>3)
+      if($machineElectronic == 'A')
       {
         $machine = Machine::find(3);
         $machine->state = 'A';
         $machine->save();
         $minutes +=60;
       }
-
-      $machine = Machine::find(4);
-      $machine->state = 'A';
-      $machine->save();
-      $minutes +=60;
-
-      $machine = Machine::find(5);
-      $machine->state = 'A';
-      $machine->save();
-      $minutes +=60;
-
+      if($machineTostion == 'A')
+      {
+        $machine = Machine::find(3);
+        $machine->state = 'A';
+        $machine->save();
+        $minutes +=60;
+      }
+      if($machineSelect == 'A')
+      {
+        $machine = Machine::find(3);
+        $machine->state = 'A';
+        $machine->save();
+        $minutes +=60;
+      }
       return $this->addMinutes($minutes);
 
     }

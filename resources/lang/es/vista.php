@@ -63,10 +63,10 @@ return [
     'confirmation_delete'  => '¿Esta seguro de eliminar la finca seleccionada?',
     'title_factor_calculate'=> 'Factor de rendimiento en base a 250gr',
 
-    'grain_pasilla'        => 'Grano pasilla %',
-    'grain_white'          => 'Grano blanco %',
-    'grain_fermented'       => 'Grano fermentado %',
-    'broca'                => 'Broca %',
+    'grain_pasilla'        => 'Grano pasilla gr',
+    'grain_white'          => 'Grano blanco gr',
+    'grain_fermented'      => 'Grano fermentado gr',
+    'broca'                => 'Broca gr',
     'factor_in_kilos'      => 'Factor de rendimiento en kilos',
     'title_data_lots'      => 'Datos de lote',
 
@@ -93,8 +93,11 @@ return [
     'label_machine_electronic' => 'Electrónica',
     'label_machine_tostion' => 'Tostión',
     'label_machine_select' => 'Selección',
+    'label_machine' => 'Seleccione máquinas',
     'label_hour_end' => 'Hora fin',
     'label_id_lot' => 'Id de lote',
+    'label_merma' => 'Merma gr',
+    'label_dxmachine' => 'D x Máquina gr',
 
     'th-waiting_lots'      => 'Lotes en espera',
     'th-inprocess_lots'    => 'Lotes en proceso',
