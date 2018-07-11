@@ -59,18 +59,32 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+
         'pgsql' => [
-            'driver' => 'pgsql',
-            'host'   => env('DB_HOST', '127.0.0.1'),
-            'port'   =>   '5432',
-              'database' => env('DB_DATABASE', 'forge'),
-            'username'  => 'postgres',
-            'password'  => 1234,
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
-        ],
+       'driver' => 'pgsql',
+       'host'   => 'aa1ciau7oxez5h3.cou0sn6ratbz.us-east-2.rds.amazonaws.com',
+        'port'   =>   '5432',
+          'database' => 'postgres',
+        'username'  => 'root',
+        'password'  => victorALFONSO91,
+        'charset' => 'utf8',
+        'prefix' => '',
+        'schema' => 'public',
+        'sslmode' => 'prefer',
+    ],
+        //
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'host'   => env('DB_HOST', '127.0.0.1'),
+        //     'port'   =>   '5432',
+        //       'database' => env('DB_DATABASE', 'forge'),
+        //     'username'  => 'postgres',
+        //     'password'  => 1234,
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
 
 
         // 'pgsql' => [

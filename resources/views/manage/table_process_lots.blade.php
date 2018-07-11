@@ -53,15 +53,15 @@
                       @if($detailsLost1->state == 'A')
                         <td>{{$detailsLost1->start_time}}</td>
 
-                        <td>{{$detailsLost1->machine_trilla}}</td>
+                        <td data-toggle="tooltip" title="Tiempo trilla: 60min">{{$detailsLost1->machine_trilla}}</td>
 
-                        <td>{{$detailsLost1->machine_desimetric}}</td>
+                        <td data-toggle="tooltip" title="Tiempo desimétrica: 60min">{{$detailsLost1->machine_desimetric}}</td>
 
-                        <td>{{$detailsLost1->machine_electronic}}</td>
+                        <td data-toggle="tooltip" title="Tiempo electrónica: 60min">{{$detailsLost1->machine_electronic}}</td>
 
-                        <td>{{$detailsLost1->machine_tostion}}</td>
+                        <td data-toggle="tooltip" title="Tiempo tostión: 60min">{{$detailsLost1->machine_tostion}}</td>
 
-                        <td>{{$detailsLost1->machine_select}}</td>
+                        <td data-toggle="tooltip" title="Tiempo selección: 60min">{{$detailsLost1->machine_select}}</td>
 
                         <td>{{$detailsLost1->end_time}}</td>
                         @endif

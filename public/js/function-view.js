@@ -10,6 +10,7 @@ $(document).ready(function() {
 
     date();
 
+
     $('#create-lots').validate({ // initialize the plugin
 
       lang: 'es',
@@ -43,8 +44,16 @@ $(document).ready(function() {
         {
           "input-date": {
               required: 'Selecione una fecha',
-         }
+         },
+          "kilos-number": {
+               required : 'Ingrese el número de kilos'
+          }
         },
+    });
+
+    $("#add-lots").on("click", function() {
+        validateCheckBoxMachine();
+
     });
 } );
 
@@ -203,6 +212,7 @@ $(function(){
        format: 'mm/dd/yyyy',
        container: container,
        todayHighlight: true,
+       setDate: '2011-03-05',
        disableTouchKeyboard: true,
        autoclose: true,
        language: 'es',
@@ -232,9 +242,27 @@ $(function(){
 
 
      var formula = 0;
-   alert(250-(pasilla_percentage+white_percentage+fermented_percentage+borer+merma+dxmachine));
+  // alert(250-(pasilla_percentage+white_percentage+fermented_percentage+borer+merma+dxmachine));
      var formula = 250*70/(250-(pasilla_percentage+white_percentage+fermented_percentage+borer+merma+dxmachine));
 
      document.getElementById('yield-factor').value=parseInt(formula);
+
+   }
+
+   /**
+   ** Funcion que contiene validacione de checkbox de máquinas a seleccionar
+   **/
+   function validateCheckBoxMachine()
+   {
+     var trilla_check     = $("#trilla-check").is(":checked");
+     var desimetric_check = $("#desimetric-check").is(":checked");
+     var electronic_check = $("#electronic-check").is(":checked");
+     var tostion_check = $("#tostion-check").is(":checked");
+     var select_check = $("#select-check").is(":checked");
+
+     if(!trilla_check && !desimetric_check && !electronic_check && !tostion_check && !select_check)
+     {
+       alert("Debe de seleccionar al menos una máquina");
+     }
 
    }

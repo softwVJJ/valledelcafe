@@ -2,7 +2,7 @@
 <body class="fixed-nav sticky-footer color-lateral" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav">
-    <a class="navbar-brand text-white" href="index.html">@lang("vista.name_company")</a>
+    <a class="navbar-brand text-white" href="registro_datos">@lang("vista.name_company")</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +22,7 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@lang('vista.three_item_dashboard')">
              <a class="nav-link text-dark" href="process_lots">
-               <i class="fa fa-coffee"></i>
+               <i class="fa fa-tasks"></i>
                <span class="nav-link-text">@lang("vista.three_item_dashboard")</span>
              </a>
            </li>

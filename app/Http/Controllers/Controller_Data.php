@@ -32,24 +32,27 @@ class Controller_Data extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Función que permite la creación de una persona.
+     * Se retorna un mensaje en javascript si la persona ya esta creada.
      */
     public function create($employeeRole2,$typeUser,$type_identification,$identification,$name,$last_name,$telephone,$address,$email,
                            $nameEstate,$addressEstate,$altitudeEstate,$cityEstate,$veredaEstate)
     {
 
 
-        $person = new Person;
-        $userType = new UserType;
+        $person = new Person; //Inicializa objeto tipo Person de la BD.
+        $userType = new UserType; //Inicializa objeto tipo UserType de la BD.
 
-        $validation = $person->find($identification);
+        $validation = $person->find($identification);//Verifíca si la persona a registrar ya esta existe.
 
+        /*
+        *Condición que permite saber si una persona está registrada.
+        *La variable $validation toma el valor de 1 si la persona existe en BD.
+        */
         if(count($validation) == 1)
         {
           echo "<script type=\"text/javascript\">
-                 alert('El usuario con número de identificación $identification ya esta registrado');
+                 alert('El usuario con número de identificación $identification ya está registrado');
                  history.go(-1);
                 </script>";
               exit;
