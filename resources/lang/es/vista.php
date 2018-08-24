@@ -61,7 +61,7 @@ return [
     'remove'                => 'Eliminar',
     'title_remove_estate'   => 'Eliminar finca',
     'confirmation_delete'   => '¿Esta seguro de eliminar la finca seleccionada?',
-    'title_factor_calculate'=> 'Factor de rendimiento en base a 250gr',
+    'title_factor_calculate'=> 'Análisis Físico y Sensorial',
 
     'grain_pasilla'        => 'Grano pasilla gr',
     'grain_white'          => 'Grano blanco gr',

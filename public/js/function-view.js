@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 function editEstate(id)
 {
-
+     alert(id);
      var name = document.getElementById('name'+id).innerHTML;
      var address = document.getElementById('address'+id).innerHTML;
      var altitude = document.getElementById('altitude'+id).innerHTML;
@@ -131,6 +131,7 @@ function addEstate(id)
 
 function addLots(id)
 {
+
   document.getElementById('id-estate').value=id;
    $("#modal-add-lots").modal();
 }
